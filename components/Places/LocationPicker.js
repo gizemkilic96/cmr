@@ -14,7 +14,7 @@ import {
 import { Colors } from '../../constants/colors';
 import OutlinedButton from '../UI/OutlinedButton';
 import { getAddress, getMapPreview } from '../../util/location';
-import MapView, { Marker } from "react-native-maps";
+import MapView from 'react-native-maps';
 
 function LocationPicker({ onPickLocation }) {
   const [pickedLocation, setPickedLocation] = useState();
@@ -41,9 +41,11 @@ function LocationPicker({ onPickLocation }) {
       if (pickedLocation) {
         const address = await getAddress(
           pickedLocation.lat,
-          pickedLocation.lng
+          pickedLocation.lng,
+          
         );
         onPickLocation({ ...pickedLocation, address: address });
+        
       }
     }
 
@@ -115,7 +117,6 @@ function LocationPicker({ onPickLocation }) {
     </View>
   );
 }
-
 
 export default LocationPicker;
 

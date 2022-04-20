@@ -41,7 +41,7 @@ function PlaceForm({onCreatePlace}) {
       </View>
       <ImagePicker onTakeImage={takeImageHandler} />
       <LocationPicker onPickLocation={pickLocationHandler} />
-      <Button onPress={savePlaceHandler} >Add Place</Button>
+      <Button onPress={savePlaceHandler}>Add Place</Button>
     </ScrollView>
   );
 }
